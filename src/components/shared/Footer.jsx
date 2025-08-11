@@ -11,19 +11,19 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
     const { data: contactData } = useGetContactQuery()
-    console.log(contactData)
+    // console.log(contactData)
 
     const footerData = contactData?.data?.[0]
-    console.log(footerData)
+    // console.log(footerData)
 
-    // useEffect(() => {
-    //     const checkDeviceType = () => {
-    //         const mobileRegex =
-    //             /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-    //         setIsMobile(mobileRegex.test(navigator.userAgent));
-    //     };
-    //     checkDeviceType();
-    // }, []);
+    useEffect(() => {
+        const checkDeviceType = () => {
+            const mobileRegex =
+                /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+            setIsMobile(mobileRegex.test(navigator.userAgent));
+        };
+        checkDeviceType();
+    }, []);
 
     const handlePhoneClick = async (e) => {
         console.log("clicked")
